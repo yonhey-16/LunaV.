@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro de Persona</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #d16ba5, #86a8e7, #5ffbf1);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+    }
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .formulario {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 350px;
+    }
+    .formulario h1 {
+      text-align: center;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+    .campo {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .formulario input,
+    .formulario select {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+    .formulario label {
+      position: absolute;
+      top: -8px;
+      left: 10px;
+      background-color: white;
+      padding: 0 5px;
+      font-size: 14px;
+      color: #6a1b9a;
+    }
+    .formulario input[type="submit"] {
+      background-color: #ba68c8;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .formulario input[type="submit"]:hover {
+      background-color: #9c27b0;
+    }
+    .formulario .login {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+    .formulario .login a {
+      color: #9c27b0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .formulario .login a:hover {
+      text-decoration: underline;
+    }
+    #mensaje {
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="formulario">
+    <h1>Registro de Persona</h1>
+    <form action="procesar_registro.php" method="post" id="formRegistro">
+      <div class="campo">
+        <input type="text" name="nombre" required />
+        <label>Nombre completo</label>
+      </div>
+      <div class="campo">
+        <input type="email" name="email" required />
+        <label>Correo electrónico</label>
+      </div>
+      <div class="campo">
+        <input type="text" name="usuario" required />
+        <label>Nombre de usuario</label>
+      </div>
+      <div class="campo">
+        <input type="password" name="contrasena" required />
+        <label>Contraseña</label>
+      </div>
+      <div class="campo">
+        <select name="genero" required>
+          <option value="">Seleccione su género</option>
+          <option value="femenino">Femenino</option>
+          <option value="masculino">Masculino</option>
+          <option value="otro">Otro</option>
+        </select>
+        <label>Género</label>
+      </div>
+      <input type="submit" value="Registrarse" />
+    </form>
+    <div id="mensaje"></div>
+    <div class="login">
+      ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('formRegistro');
+    const mensaje = document.getElementById('mensaje');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('procesar_registro.php', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          mensaje.textContent = data;
+          mensaje.style.color = data.includes('exitoso') ? 'green' : 'red';
+          if (data.includes('exitoso')) form.reset();
+        })
+        .catch(() => {
+          mensaje.textContent = 'Error en la conexión.';
+          mensaje.style.color = 'red';
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+   background: #212121;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.nav-left {
+  font-weight: bold;
+  color: white;
+}
+
+.nav-right a, .icon {
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.page-title {
+  background: linear-gradient(to right, #1d1f4a, #7b1736); /* Fondo */
+  height: 190px; /* Ajusta el alto de la sección */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: flex-end;   /* Alinea el contenido hacia abajo */
+  padding-bottom: 40px;    /* Espacio desde el fondo */
+  color: white;
+  text-align: center;
+}
+
+.page-title h3 {
+  font-size: 48px; /* Tamaño grande de fuente */
+  font-weight: bold;
+  margin: 0;
+}
+
+.titulo-acerca {
+  margin-top: 30px;     /* Espacio arriba del título */
+  margin-bottom: 30px;  /* Espacio debajo del título */
+  text-align: center;   /* Centrado del texto (por si no lo tiene en el CSS externo) */
+  font-size: 28px;      /* Opcional: tamaño del texto */
+  font-weight: bold;    /* Opcional: negrita */
+}
+
+
+
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(to right, #1d1f4a, #7b1736);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.5rem;
+  color: white;
+}
+
+.hero .letra-v {
+  font-size: 6rem;
+  display: inline-block;
+  transform: rotate(-10deg);
+  color: white;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin: 1rem 0;
+  color: white;
+}
+
+
+.hero button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background-color: #548ac9;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.destacados {
+  background-color: #f9f9f9;
+  color: black;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.destacados h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 250px;
+  text-align: left;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.card a {
+  font-size: 0.9rem;
+  color: #555;
+  text-decoration: underline;
+}
+
+.stars {
+  color: #f5c518;
+  font-size: 1rem;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  background-color: #25d366;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-title {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000;
+  text-decoration: underline;
+  margin: 0.5em 0 0.2em;
+}
+
+.product-title:hover {
+  color: #2a5f91;
+}
+
+.category {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: underline;
+  margin-bottom: 0.5em;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.stars {
+  font-size: 1.2rem;
+  color: gold;
+  margin-top: 0.5em;
+}
+/*-------*/
+footer {
+  padding: 3rem 0;
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#goodbye h3 {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.accordion-button {
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  border: none;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.accordion-item {
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-body {
+  background-color: #fff;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.goodbye-info .card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #006eff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0052cc;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800,900");
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-link img {
+  margin-right: 4px; /* más pequeño que antes */
+}
+
+.nav-left {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #f3efef;
+}
+
+.agregar-carrito {
+  background-color: #ba68c8;      /* Morado pastel */
+  color: white;                   /* Texto blanco */
+  border: none;                   /* Sin borde */
+  padding: 12px 25px;             /* Tamaño cómodo para clic */
+  border-radius: 15px;            /* Bordes redondeados */
+  font-weight: 600;               /* Negrita */
+  font-size: 1rem;                /* Tamaño de letra legible */
+  font-family: 'Segoe UI', sans-serif;
+  cursor: pointer;                /* Mano al pasar el mouse */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(186, 104, 200, 0.4);
+}
+
+.agregar-carrito:hover {
+  background-color: #9c27b0;      /* Morado oscuro al pasar mouse */
+  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.6);
+}
+
+
+
+
+/* TITULO DE LOS DOS FORMULARIOS */
+h3 {
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
+  color: #000000;
+}
+
+
+
+footer #goodbye h3 {
+  color: rgb(0, 0, 0);
+  margin-top: 20px;
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+
+
+
+footer #contacto {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+}
+
+footer #contacto h3 {
+  padding-top: 60px;
+   color: white;
+}
+
+footer #contacto p {
+  padding-top: 10px;
+  color: white;
+  font-size: 12px;
+}
+
+footer #terms h4 {
+  padding-top: 20px;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+footer #terms {
+  display: block;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #e9e9e9;
+}
+
+footer #terms h5 {
+  color: #000;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+
+}
+
+footer #terms p {
+  color: #000;
+  font-size: 13px;
+}
+
+footer #terms a {
+  color: black;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
+
+

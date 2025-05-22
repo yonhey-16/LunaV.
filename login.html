@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #d16ba5, #86a8e7, #5ffbf1);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .formulario {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 350px;
+    }
+
+    .formulario h1 {
+      text-align: center;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    .campo {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .formulario input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .formulario label {
+      position: absolute;
+      top: -8px;
+      left: 10px;
+      background-color: white;
+      padding: 0 5px;
+      font-size: 14px;
+      color: #6a1b9a;
+    }
+
+    .formulario input[type="submit"] {
+      background-color: #ba68c8;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .formulario input[type="submit"]:hover {
+      background-color: #9c27b0;
+    }
+
+    .formulario .registro {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .formulario .registro a {
+      color: #9c27b0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .formulario .registro a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="formulario">
+    <h1>Iniciar Sesión</h1>
+    <form action="procesar_login.php" method="post">
+      <div class="campo">
+        <input type="text" name="usuario" required>
+        <label>Usuario</label>
+      </div>
+      <div class="campo">
+        <input type="password" name="contrasena" required>
+        <label>Contraseña</label>
+      </div>
+      <input type="submit" value="Entrar">
+      <div class="registro">
+        ¿No tienes cuenta? <a href="registro.html">Regístrate</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
